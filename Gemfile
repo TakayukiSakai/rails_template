@@ -1,40 +1,82 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
+gem 'browser'
+gem 'cancancan'
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
-# Use jquery as the JavaScript library
+gem 'compass-rails'
+gem 'counter_culture'
+gem 'daemons'
+gem 'delayed_job', '4.0.2'
+gem 'delayed_job_active_record'
+gem 'devise'
+gem 'enumerize'
+gem 'exception_notification', github: 'smartinez87/exception_notification'
+gem 'figaro'
+gem 'foreigner'
+gem 'gon'
+gem 'haml-rails'
+gem 'httparty'
+gem 'json'
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'kaminari'
+gem 'meta-tags', require: 'meta_tags'
+gem 'metainspector'
+gem 'mysql2'
+gem 'oj'
+gem 'paperclip'
+gem 'paranoia', '~> 2.0'
+gem 'ransack'
+gem 'sass-rails'
+gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'slack-notifier'
+gem 'simple_form'
+gem 'therubyracer'
+gem 'unicorn'
+gem 'rack-cors', require: 'rack/cors'
+gem 'rails-assets-bootstrap'
+gem 'awesome_nested_set'
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :production do
+  gem 'dotenv-rails'
+end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :development do
+  gem 'annotate', '>= 2.6.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'bullet'
+  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
+  gem 'letter_opener'
+  gem 'meta_request'
+  gem 'pry-remote'
+  gem 'quiet_assets'
+  gem 'spring'
+  gem 'spring-commands-rspec', require: false
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :test do
+  gem 'webmock'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development, :test do
+  gem 'awesome_print'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'rspec-rails'
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
+group :development, :staging, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'gimei'
+end
